@@ -1,6 +1,15 @@
-import Grid from "@mui/material/Grid";
+"use client";
 
-const Container = () => {
-  return <Grid paddingInline={"1rem"} pb={"2rem"} container spacing={3}></Grid>;
-};
-export default Container;
+interface ContainerProps {
+  children: React.ReactNode;
+}
+
+export default function Container({ children }: ContainerProps) {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="w-full  mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {children}
+      </div>
+    </div>
+  );
+}
